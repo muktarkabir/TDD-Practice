@@ -1,0 +1,23 @@
+{
+  "name": "tdd-practice",
+  "version": "1.0.0",
+  "description": "A project to practice test driven development in javascript!",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muktarkabir/TDD-Practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muktarkabir/TDD-Practice/issues"
+  },
+  "homepage": "https://github.com/muktarkabir/TDD-Practice#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.2",
+    "jest": "^30.3.0"
+  }
+}

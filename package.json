@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A project to practice test driven development in javascript!",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },

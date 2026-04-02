@@ -4,6 +4,24 @@ export function caeserCipher(string, shiftFactor) {
   //upperCase 65-90
   const isALowerCaseLetter = (unicode) => unicode >= 97 && unicode <= 122;
   const isAnUpperCaseLetter = (unicode) => unicode >= 65 && unicode <= 90;
+  const wrapAround = (char, letterCase) => {
+    let count = shiftFactor;
+    if (letterCase === "lowercase") {
+      while (char <= 122) {
+        char += 1;
+        count -= 1;
+      }
+      char = 97 + count;
+    } else {
+      while (char <= 90) {
+        char += 1;
+        count -= 1;
+      }
+      char = 65 + count;
+    }
+    return String.fromCharCode(char);
+  };
+
   characters.forEach((_, index) => {
     characters[index] = string.charCodeAt(index);
   });
@@ -25,4 +43,3 @@ export function caeserCipher(string, shiftFactor) {
 
   return characters.join("");
 }
-

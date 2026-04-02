@@ -1,12 +1,28 @@
 export function caeserCipher(string, shiftFactor) {
   const characters = string.split("");
-//lowercase 97-122
-//upperCase 65-90
-  console.log(characters);
-  characters.forEach((char, index) => {
+  //lowercase 97-122
+  //upperCase 65-90
+  const isALowerCaseLetter = (unicode) => unicode >= 97 && unicode <= 122;
+  const isAnUpperCaseLetter = (unicode) => unicode >= 65 && unicode <= 90;
+  characters.forEach((_, index) => {
     characters[index] = string.charCodeAt(index);
   });
-  console.log(characters);
+  characters.forEach((char, index) => {
+    let newCode = char + shiftFactor;
+    if (isALowerCaseLetter(char)) {
+      //proceed as a lowercase letter
+      newCode > 122
+        ? (characters[index] = wrapAround(char, "lowercase"))
+        : (characters[index] = String.fromCharCode(newCode));
+    } else if (isAnUpperCaseLetter(char)) {
+      newCode > 90
+        ? (characters[index] = wrapAround(char, "uppercase"))
+        : (characters[index] = String.fromCharCode(newCode));
+    } else {
+      characters[index] = String.fromCharCode(char);
+    }
+  });
+
+  return characters.join("");
 }
 
-caeserCipher("MmUuktar");

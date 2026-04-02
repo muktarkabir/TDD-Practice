@@ -28,7 +28,6 @@ export function caeserCipher(string, shiftFactor) {
   characters.forEach((char, index) => {
     let newCode = char + shiftFactor;
     if (isALowerCaseLetter(char)) {
-      //proceed as a lowercase letter
       newCode > 122
         ? (characters[index] = wrapAround(char, "lowercase"))
         : (characters[index] = String.fromCharCode(newCode));

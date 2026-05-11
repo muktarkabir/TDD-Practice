@@ -42,3 +42,7 @@ export function caeserCipher(string, shiftFactor) {
 
   return characters.join("");
 }
+
+const ruhaima = caeserCipher('Ruhaima',31);
+const me = caeserCipher('Zurkalnain',20);
+console.log(ruhaima,me);
